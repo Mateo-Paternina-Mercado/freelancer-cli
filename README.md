@@ -42,7 +42,8 @@ freelancer-cli/
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/<tu-usuario>/freelancer-cli.git
+git clone https://github.com/Mateo-Paternina-Mercado/freelancer-cli
+
 cd freelancer-cli
 ```
 
@@ -91,8 +92,8 @@ Desde el CLI puedes:
 | Rol              | Nombre                         |
 |------------------|--------------------------------|
 | Scrum Master     | Mateo Paternina Mercado        |
-| Product Owner    | Daniel Felipe Florez Cubides   |
-| Desarrolladores  | Mateo y Daniel                 |
+| Product Owner    | Mateo Paternina Mercado        |
+| Desarrolladores  | Mateo Paternina Mercado        |
 
 ---
 
@@ -119,3 +120,11 @@ Desde el CLI puedes:
 ## 📝 Licencia
 
 Proyecto académico para Campuslands. Uso educativo.
+
+
+
+## examen
+
+**intento de modificar la logica de propuesta - 1577**
+
+esta en fase de construnccion de datos y no se puede usar en la consola aun.

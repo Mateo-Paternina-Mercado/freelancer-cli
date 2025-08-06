@@ -1,8 +1,8 @@
-import { getDB } from '../config/db.js';
+import { conectarDB } from '../config/db.js';
 import inquirer from 'inquirer';
 
 export async function crearPropuesta() {
-  const db = await getDB();
+  const db = await conectarDB();
   const clientes = await db.collection('clientes').find().toArray();
 
   if (clientes.length === 0) {
@@ -22,10 +22,12 @@ export async function crearPropuesta() {
     },
   ]);
 
-  const { titulo, descripcion, presupuesto } = await inquirer.prompt([
+  const { titulo, descripcion, presupuesto, aceptada} = await inquirer.prompt([
     { name: 'titulo', message: 'Título de la propuesta:' },
     { name: 'descripcion', message: 'Descripción de la propuesta:' },
     { name: 'presupuesto', message: 'Presupuesto estimado:', validate: v => !isNaN(v) || 'Debe ser numérico' },
+    { name: 'aceptada', message: 'propuesta aceptada sin proyecto:', validate: v => !FileList(v) ||  'Esto es una lista'},
+
   ]);
 
   await db.collection('propuestas').insertOne({
@@ -33,6 +35,7 @@ export async function crearPropuesta() {
     titulo,
     descripcion,
     presupuesto: parseFloat(presupuesto),
+    aceptada,
     fechaCreacion: new Date(),
   });
 
@@ -40,7 +43,7 @@ export async function crearPropuesta() {
 }
 
 export async function listarPropuestas() {
-  const db = await getDB();
+  const db = await conectarDB();
   const propuestas = await db.collection('propuestas').find().toArray();
 
   if (propuestas.length === 0) {
@@ -56,7 +59,7 @@ export async function listarPropuestas() {
 }
 
 export async function eliminarPropuesta() {
-  const db = await getDB();
+  const db = await conectarDB();
   const propuestas = await db.collection('propuestas').find().toArray();
 
   if (propuestas.length === 0) {

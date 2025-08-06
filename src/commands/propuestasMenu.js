@@ -1,5 +1,5 @@
 import inquirer from 'inquirer';
-import { crearPropuesta, listarPropuestas, eliminarPropuesta } from '../services/propuestasService.js';
+import { crearPropuesta, listarPropuestas, eliminarPropuesta } from '../services/propuestaService.js';
 
 export async function mostrarMenuPropuestas() {
   let salir = false;

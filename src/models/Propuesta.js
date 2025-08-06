@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export class Propuesta {
   constructor({ titulo, descripcion, clienteCedula, fechaEntrega, valor }) {
     if (!titulo || !descripcion || !clienteCedula || !fechaEntrega || !valor) {
@@ -15,7 +14,7 @@ export class Propuesta {
     this.valor = valor;
     this.estado = "pendiente"; // Estados: pendiente, aceptada, rechazada
   }
-=======
+}
 import { ObjectId } from 'mongodb';
 
 /**
@@ -57,5 +56,4 @@ export function crearPropuesta(datos) {
     fecha: fecha,
     idCliente: new ObjectId(datos.idCliente),
   };
->>>>>>> feat/modelo-propuesta
 }
